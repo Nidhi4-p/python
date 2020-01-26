@@ -1,0 +1,20 @@
+def longestPalindromicSubstring(string):
+    m=[]
+	if(len(string)==1):
+    	m.append(string)
+    
+	
+    for i in range(len(string)):
+        for j in range(i+1,len(string)):
+            s=string[i:j+1]
+            if(s==s[::-1]):
+                m.append(s)
+            else:
+                continue
+    j={"largest":m[0]}
+    for i in range(len(m)-1):
+        if((len(m[i])<len(m[i+1])) and len(m[i+1])>len(j["largest"])):
+            j["largest"]=m[i+1]
+        else:
+            continue
+    return (j["largest"])
