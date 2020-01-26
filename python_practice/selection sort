@@ -1,0 +1,23 @@
+def selectionSort(array):
+	
+	k=0
+	m={"min":array[0]}
+	l=len(array)
+	temp=0
+	t=0
+	while(k<l-1):
+    	m["min"]=array[k]
+    	for i in range(k,l-1):
+        	if((array[i]>array[i+1]) and (array[i+1]<m["min"])):
+            	m["min"]=array[i+1]
+            	t=i+1
+        	else:
+            	continue
+			if(t==0):
+        		break
+			else:
+    			temp=array[k]
+    			array[k]=array[t]
+    			array[t]=temp
+    	k+=1
+	return (array)
